@@ -8,10 +8,7 @@ This is a pre-packaged Solr version with Lithuanian language support from [zmede
 
 - Download.
 - Edit `solr/conf/schema.xml` (see "Configuration" below).
-- Run:
-```sh
-java -jar start.jar
-```
+- Run: `java -jar start.jar`
 - Open <http://localhost:8983/solr/admin> in your browser
 
 ### Requirements
@@ -48,7 +45,7 @@ The default port for Solr server is 8983 to change it edit this line in `etc/jet
 
 *Note: these exapmles use JSON format for data. You can also use XML and other formats that Solr supports.*
 
-Posting data to server (assuming fields id,url,title,text are defined in schema.xml):
+Posting data to server (assuming fields *id,url,title,text* are defined in schema.xml):
 
 ```sh
 curl 'http://localhost:8983/solr/update/json?commit=true' \
@@ -67,9 +64,9 @@ curl 'http://localhost:8983/solr/search' \
 
 You can use your browser to see what results you will get using various HTTP parameters. The query above can be used like this:
 
-<http://localhost:8983/solr/search?q=pavyzdys&hl=true&hl.fl=text&wt=json>
+<http://localhost:8983/solr/search?wt=json&hl=true&hl.fl=text&q=pavyzdys>
 or to get XML:
-<http://localhost:8983/solr/search?q=pavyzdys&hl=true&hl.fl=text>
+<http://localhost:8983/solr/search?hl=true&hl.fl=text&q=pavyzdys>
 
 #### Tip
 
