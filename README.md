@@ -15,9 +15,9 @@ This is a pre-packaged Solr version with Lithuanian language support from [zmede
 
 - Java
 
-### Configuration
+## Configuration
 
-#### Fields, types, schema.xml
+### Fields, types, schema.xml
 
 You should first of all configure the *fields* for the documents in the database. Fields are defined in file `solr/conf/schema.xml`. Look for `<field .../>` tags and change them according to your needs.
 
@@ -25,7 +25,7 @@ You will probably have to remove a lot of fields from the default `schema.xml` i
 
 The default field type for indexing Lithuanian text is `text_lt`. You can also define your own field types in the same `schema.xml` file.
 
-#### Stopwords, synonyms, protected words
+### Stopwords, synonyms, protected words
 
 After playing with the server for some time you will notice that sometimes searches return too many results with words that are too dissimilar to words in your query. This happens because the Lithuanian stemmer cuts off too many characters from the end of the word. To help cope with this you can use `solr/conf/protwords_lt.txt` and `solr/conf/synonyms_lt.txt` to write the exact cases for problematic words. See the examples in these files for more info.
 
@@ -33,7 +33,7 @@ If you add your own words to these files, please send a patch, so that we all ca
 
 `solr/conf/stopwords_lt.txt` contains a good list of short words (*like "ir","šis","tačiau"*) that are useless when searching. They are ommitted from index and ignored in query text.
 
-#### Default port
+### Default port
 
 The default port for Solr server is 8983 to change it edit this line in `etc/jetty.xml` (check for duplicates):
 
@@ -41,7 +41,7 @@ The default port for Solr server is 8983 to change it edit this line in `etc/jet
 <Set name="port"><SystemProperty name="jetty.port" default="8983"/></Set>
 ```
 
-### Using Solr server from your applications
+## Using Solr server from your applications
 
 *Note: these exapmles use JSON format for data. You can also use XML and other formats that Solr supports.*
 
@@ -68,11 +68,11 @@ You can use your browser to see what results you will get using various HTTP par
 or to get XML:
 <http://localhost:8983/solr/search?hl=true&hl.fl=text&q=pavyzdys>
 
-#### Tip
+### Tip
 
 From my experience it is easier to strip HTML tags and send plain text to Solr for indexing than try to convert HTML to an XML that Solr would accept.
 
-### Tuning
+## Tuning
 
 You can limit the amount of memory the server uses by passing java executable some parameters, e.g.:
 
