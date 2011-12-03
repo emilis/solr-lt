@@ -4,6 +4,8 @@
 
 This is a pre-packaged Solr version with Lithuanian language support from [zmedelis/ltlangpack](https://github.com/zmedelis/ltlangpack).
 
+[![Click here to lend your support to: Help me spend more time developing free software and make a donation at www.pledgie.com !](https://www.pledgie.com/campaigns/16042.png?skin_name=chrome)](http://www.pledgie.com/campaigns/16042)
+
 ## Usage
 
 - Download.
